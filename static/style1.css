@@ -1,0 +1,95 @@
+/* Basic styling for the header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+header img {
+    max-width: 2px;
+}
+
+/* Styling for sections with images */
+.transportation-options,
+.accommodation-types {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+
+.transportation-images,
+.accommodation-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.transportation-images img,
+.accommodation-images img {
+    max-width: 200px;
+    margin: 0 10px;
+}
+
+/* Styling for the call to action button */
+.cta-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button a:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for slideshow */
+.mySlides {
+    display: none;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.4;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}

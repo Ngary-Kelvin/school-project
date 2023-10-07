@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ngary's Tour</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='javascript.js') }}">
+</head>
+<body>
+    <!-- Header with company logo -->
+    <header>
+        <img src="static\photos\logo.png" alt="Company Logo">
+        <h1>Welcome to Ngary's Tour and Adventures</h1>
+    </header>
+
+    <!-- Image section with transportation options -->
+<section class="transportation-options">
+    <h2>Our Transportation Options</h2>
+    <h2>Shared Safari Vehicles</h2>
+    <div class="transportation-images">
+        <div class="slideshow-container">
+            <img class="mySlides" src="static\photos\shared_vihicles\2.jpeg" alt="Shared Safari Vehicle">
+            <img class="mySlides" src="static\photos\shared_vihicles\3.jpeg" alt="Shared Safari Vehicle ">
+            <img class="mySlides" src="static\photos\shared_vihicles\4.jpeg" alt="Shared Safari Vehicle">
+        </div>
+        <!-- Add navigation buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</section>
+
+
+    <!-- Image section with accommodation types -->
+    <section class="accommodation-types">
+        <h2>Our Accommodation Types</h2>
+        <div class="accommodation-images">
+            <img src="{{ url_for('static', filename='accommodation1.jpg') }}" alt="Accommodation 1">
+            <img src="{{ url_for('static', filename='accommodation2.jpg') }}" alt="Accommodation 2">
+            <img src="{{ url_for('static', filename='accommodation3.jpg') }}" alt="Accommodation 3">
+        </div>
+    </section>
+
+    <div class="container">
+    <a href="/generate_quotation">Generate Quotation</a>
+    <a href="/client_registration">Register and book</a>
+    </div>
+</body>
+</html>
