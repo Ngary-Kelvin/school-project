@@ -5,9 +5,19 @@ header {
     background-color: #f0f0f0;
 }
 
-header img {
-    max-width: 2px;
+
+.logo {
+    /* Ensure a minimum size of 2px by 2px */
+    min-width: 2px;
+    min-height: 2px;
 }
+
+.logo img {
+    /* Set the image's size */
+    width: 2px; /* Adjust to your desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
 
 /* Styling for sections with images */
 .transportation-options,
