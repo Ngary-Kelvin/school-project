@@ -63,16 +63,15 @@ h2 {
 
 .transportation-images,
 .accommodation-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust image size as needed */
+    gap: 10px; /* Adjust spacing between images as needed */
 }
 
 .transportation-images img,
 .accommodation-images img {
     max-width: 200px;
-    margin: 0 10px;
+    height: auto;
 }
 
 /* Styling for the call to action button */
@@ -103,10 +102,21 @@ h2 {
 }
 
 .slideshow-container {
-    position: relative;
     max-width: 100%;
-    margin: auto;
-    overflow: hidden;
+    position: relative;
+}
+
+.mySlides img {
+    width: 100%;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
 }
 
 .fade {
