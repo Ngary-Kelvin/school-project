@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Ngary's Tour</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles1.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='javascript.js') }}">
+    <link rel="stylesheet" href="static\style1.css">
+    <link rel="stylesheet" href="static\javascript.js">
 </head>
 <body>
     <!-- Header with company logo -->
     <header>
-        <div class="logo">
-            <img src="static\photos\logo.png" alt="Company Logo">
+        <div class="container">
+            <div class="header-top">
+            </div>
+            <div class="logo">
+                <img src="static\photos\logo.png" alt="Company Logo">
+            </div>
+            <h1>Welcome to Ngary's Tour and Travel Adventures</h1>
+            <a href="/client_registration">Register and book</a>
+            <a href="/generate_quotation">Generate Quotation</a>
         </div>
-        
-        <h1>Welcome to Ngary's Tour and Travel Adventures</h1>
     </header>
+
+    <!-- Full-width slideshow container -->
+<div class="slideshow-container">
+    <!-- Slides -->
+    <div class="mySlides fade">
+        <img src="static\photos\1.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+        <img src="image2.jpg" style="width:100%">
+    </div>
+    
+    <!-- Add more slides with different images -->
+</div>
 
     <!-- Image section with transportation options -->
 <section class="transportation-options">
@@ -23,7 +42,6 @@
     <h2>Shared Safari Vehicles</h2>
     <div class="transportation-images">
         <div class="slideshow-container">
-            <img class="mySlides" src="static\photos\shared_vihicles\1.jpeg" alt="Shared Safari Vehicle">
             <img class="mySlides" src="static\photos\shared_vihicles\2.jpeg" alt="Shared Safari Vehicle">
             <img class="mySlides" src="static\photos\shared_vihicles\3.jpeg" alt="Shared Safari Vehicle">
             <img class="mySlides" src="static\photos\shared_vihicles\4.jpeg" alt="Shared Safari Vehicle">
@@ -40,15 +58,16 @@
     <h2>Private Safari Vehicles</h2>
     <div class="transportation-images">
         <div class="slideshow-container">
-            <img class="mySlides" src="static\photos\private_vihicles\1.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\2.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\3.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\4.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\5.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\6.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\7.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\8.jpeg" alt="private Safari Vehicle">
-            <img class="mySlides" src="static\photos\private_vihicles\9.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\1.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\2.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\3.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\4.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\5.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\6.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\7.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\8.jpeg" alt="private Safari Vehicle">
+            <img class="mySlides" src="static\photos\private_vehicles\9.jpeg" alt="private Safari Vehicle">
+            
         </div>
         <!-- Add navigation buttons -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -60,16 +79,31 @@
     <!-- Image section with accommodation types -->
     <section class="accommodation-types">
         <h2>Our Accommodation Types</h2>
+        <h2>luxury lodge</h2>
         <div class="accommodation-images">
-            <img src="{{ url_for('static', filename='accommodation1.jpg') }}" alt="Accommodation 1">
-            <img src="{{ url_for('static', filename='accommodation2.jpg') }}" alt="Accommodation 2">
-            <img src="{{ url_for('static', filename='accommodation3.jpg') }}" alt="Accommodation 3">
+            <img src="static\photos\luxury_lodge\Kenya-top1.jpg" alt="luxury lodge">
+            <img src="static\photos\luxury_lodge\Kenya-top2.jpg" alt="luxury lodge">
+            <img src="static\photos\luxury_lodge\Kenya-top3.jpg" alt="luxury lodge">
+            <img src="static\photos\luxury_lodge\Kenya-top4.jpg" alt="luxury lodge">
+            <img src="static\photos\luxury_lodge\Kenya-top5.jpg" alt="luxury lodge">
+        </div>
+        <h2>Tented Camps</h2>
+        <div class="accommodation-images">
+            <img src="static\photos\tented_camps\1.jpg" alt="Budgeted Camps">
+            <img src="static\photos\tented_camps\2.jpg" alt="Budgeted Camps">
+            <img src="static\photos\tented_camps\3.jpg" alt="Budgeted Camps">
+            <img src="static\photos\tented_camps\4.jpeg" alt="Budgeted Camps">
+            <img src="static\photos\tented_camps\5.jpeg" alt="Budgeted Camps">
+        </div>
+        <h2>Budgeted Camps</h2>
+        <div class="accommodation-images">
+            <img src="static\photos\budgeted_camps\1.jpg" alt="Tented Camps">
+            <img src="static\photos\budgeted_camps\2.jpg" alt="Tented Camps">
+            <img src="static\photos\budgeted_camps\3.jpg" alt="Tented Camps">
+            <img src="static\photos\budgeted_camps\4.jpeg" alt="Tented Camps">
         </div>
     </section>
 
-    <div class="container">
-    <a href="/generate_quotation">Generate Quotation</a>
-    <a href="/client_registration">Register and book</a>
-    </div>
+    
 </body>
 </html>
