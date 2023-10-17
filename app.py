@@ -12,6 +12,26 @@ clients = {}
 def home():
     return render_template('home.html')
 
+@app.route('/maasai_mara')
+def maasai_mara():
+    # Route for Maasai Mara page
+    return render_template('maasai_mara.html')
+
+@app.route('/lake_nakuru')
+def lake_nakuru():
+    # Route for Lake Nakuru page
+    return render_template('lake_nakuru.html')
+
+@app.route('/oldonyo_sabuk')
+def oldonyo_sabuk():
+    # Route for Oldonyo Sabuk page
+    return render_template('oldonyo_sabuk.html')
+
+@app.route('/tsavo')
+def tsavo():
+    # Route for Tsavo page
+    return render_template('tsavo.html')
+
 @app.route('/generate_quotation', methods=['GET', 'POST'])
 def generate_quotation_form():
     if request.method == 'POST':
