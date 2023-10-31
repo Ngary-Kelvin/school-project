@@ -1,5 +1,12 @@
 /* styles.css */
 
+/* Remove the up and down arrows from number input fields */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* Global styles */
 body {
     font-family: Arial, sans-serif;

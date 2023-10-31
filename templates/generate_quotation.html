@@ -4,43 +4,71 @@
     <meta charset="UTF-8">
     <title>Generate Quotation</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="static\javascript1.js">
+
 </head>
 <body>
     <div class="container">
         <h1>Generate Quotation</h1>
-    <form method="POST" action="/generate_quotation">
-        <label for="park_choice">Choose the Park Type:</label>
-        <select id="park_choice" name="park_choice">
-            <option value="Maasai Mara National Park">Maasai Mara National Park</option>
-            <option value="Lake Nakuru National Park">Lake Nakuru National Park</option>
-            <option value="Ol Donyo Sabuk National Park">Ol Donyo Sabuk National Park</option>
-            <option value="Tsavo National Park">Tsavo National Park</option>
-        </select>
+        <form method="POST" action="/generate_quotation">
+            <label for="park_choice">Choose the Park Type:</label>
+            <select id="park_choice" name="park_choice">
+                <option value="Maasai Mara National Park">Maasai Mara National Park</option>
+                <option value="Lake Nakuru National Park">Lake Nakuru National Park</option>
+                <option value="Ol Donyo Sabuk National Park">Ol Donyo Sabuk National Park</option>
+                <option value="Tsavo National Park">Tsavo National Park</option>
+            </select>
 
-        <label for="num_people">Number of People:</label>
-        <input type="number" id="num_people" name="num_people" required>
+            <label for="num_people">Number of People:</label>
+            <input type="number" id="num_people" name="num_people" required>
 
-        <label for="num_days">Number of Days:</label>
-        <input type="number" id="num_days" name="num_days" required>
+            <p>Please input the ages</p>
+            <div id="ageFields"></div>
+            <button type="button" id="addAgeField">Add Age Fields</button>
 
-        <label for="accommodation_choice">Choose Accommodation Type:</label>
-        <select id="accommodation_choice" name="accommodation_choice">
-            <option value="Luxury Lodges">Luxury Lodges</option>
-            <option value="Tented Camps">Tented Camps</option>
-            <option value="Budget Camps">Budget Camps</option>
-        </select>
 
-        <label for="transportation_choice">Choose Transportation Option:</label>
-        <select id="transportation_choice" name="transportation_choice">
-            <option value="Private Safari Vehicle">Private Safari Vehicle</option>
-            <option value="Shared Safari Vehicle">Shared Safari Vehicle</option>
-        </select>
+            <label for="num_days">Number of Days:</label>
+            <input type="number" id="num_days" name="num_days" required>
 
-        <!-- Add other form fields here -->
+            <label for="accommodation_choice">Choose Accommodation Type:</label>
+            <select id="accommodation_choice" name="accommodation_choice">
+                <option value="Luxury Lodges">Luxury Lodges</option>
+                <option value="Tented Camps">Tented Camps</option>
+                <option value="Budget Camps">Budget Camps</option>
+            </select>
 
-        <input type="submit" value="Generate Quotation">
-    </form>
+            <label for="transportation_choice">Choose Transportation Option:</label>
+            <select id="transportation_choice" name="transportation_choice">
+                <option value="Private Safari Vehicle">Private Safari Vehicle</option>
+                <option value="Shared Safari Vehicle">Shared Safari Vehicle</option>
+            </select>
+
+            <!-- Add other form fields here -->
+
+            <input type="submit" value="Generate Quotation">
+        </form>
     </div>
-    
+    <script>
+        // Function to dynamically add age input fields
+        document.getElementById('addAgeField').addEventListener('click', function () {
+            const numPeople = document.getElementById('num_people').value;
+            const ageFieldsContainer = document.getElementById('ageFields');
+            ageFieldsContainer.innerHTML = ''; // Clear previous fields
+
+            for (let i = 1; i <= numPeople; i++) {
+                const ageLabel = document.createElement('label');
+                ageLabel.setAttribute('for', `age${i}`);
+                ageLabel.textContent = `Age for Person ${i}:`;
+
+                const ageInput = document.createElement('input');
+                ageInput.setAttribute('type', 'number');
+                ageInput.setAttribute('id', `age${i}`);
+                ageInput.setAttribute('name', `age${i}`);
+
+                ageFieldsContainer.appendChild(ageLabel);
+                ageFieldsContainer.appendChild(ageInput);
+            }
+        });
+    </script>
 </body>
 </html>

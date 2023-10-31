@@ -1,0 +1,113 @@
+/* Basic styling for the header */
+:root{
+    --border-radius-md: 10px;
+    --border-radius-sm: 5px;
+    --image-gap: 100px; /* Define the variable */
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #000; /* Add a 1px solid black border */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    overflow-y: auto;
+}
+
+
+.logo {
+    /* Ensure a minimum size of 2px by 2px */
+    min-width: 10px;
+    min-height: 10px;
+    text-align: left;
+}
+
+.logo img {
+    /* Set the image's size */
+    width: 150px; /* Adjust to your desired width */
+    height: auto; /* Maintain aspect ratio */
+    text-align: left;
+}
+
+/* Custom styles for specific elements within the container */
+.container h1 {
+    text-align: center; /* Center-aligns text within h1 elements */
+}
+
+.container a {
+    text-decoration: none; /* Removes underlines from links */
+    color: #007bff; /* Sets the link color */
+    margin: 0 10px; /* Adds horizontal margin between links */
+}
+
+.container a:hover {
+    color: #0056b3; /* Changes the link color on hover */
+}
+.image-gallery {
+    display: flex; /* Use flexbox to arrange images horizontally */
+    align-items: center; /* Center vertically within the container */
+    gap: 100px; /* Add some space between images */
+}
+
+.image-container {
+    width: 500px; /* Set a fixed width for each image container */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.image-container:first-child {
+    margin-left: 70px; /* Add a margin to the left-most image container */
+}
+
+.image-container img {
+    width: 100%; /* Make the image fill the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-container:hover {
+    transform: scale(1.1); /* Enlarge the image container on hover */
+}
+
+/* Style for the separator */
+.separator {
+    height: 20px; /* Adjust the height to create the desired separation */
+    background-color: #f0f0f0; /* Add background color or any styling you prefer */
+}
+
+/* Style for the scrollable gallery */
+.scrollable-gallery {
+    overflow-x: scroll; /* Enable horizontal scrollbar */
+    white-space: nowrap; /* Prevent line breaks in child elements */
+    display: flex; /* Use flexbox to arrange images horizontally */
+    align-items: center; /* Center vertically within the container */
+    gap: 100px; /* Add some space between images */
+}
+
+.scrollable-gallery .image-container {
+    width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+    display: inline-block; /* Display images in a horizontal line */
+    vertical-align: top; /* Align images to the top */
+}
+
+.scrollable-gallery .image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.scrollable-gallery .image-container:hover {
+    transform: scale(1.1);
+}
+
+
+/* Add more CSS styles for other elements within the container as needed */

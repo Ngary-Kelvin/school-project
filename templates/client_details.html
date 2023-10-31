@@ -10,8 +10,7 @@
     <p>Phone Number: {{ client.phone_number }}</p>
     <p>Email: {{ client.email }}</p>
     <p>Gender: {{ client.gender }}</p>
-    <p>National ID or Passport: {% if client.identification_type == 'National ID' %} {{ client.national_id }} {% else %} {{ client.passport }} {% endif %}</p>
-
+    <p>National ID or Passport: {% if client.identification_type == 'National ID' %} {{ client.national_id }} {% else %} {{ client.passport }} {% endif %}</p> 
 
     <!-- Add more client details as needed -->
 </body>

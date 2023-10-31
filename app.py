@@ -40,7 +40,10 @@ def generate_quotation_form():
         num_days = int(request.form['num_days'])
         accommodation_choice = request.form['accommodation_choice']
         transportation_choice = request.form['transportation_choice']
-        ages = [int(request.form[f'age{i}']) for i in range(1, 6) if request.form.get(f'age{i}')]
+        # ages = [int(request.form[f'age{i}']) for i in range(1, 6) if request.form.get(f'age{i}')]
+
+        # Collect ages of clients from the form
+        ages = [int(request.form.get(f'age{i}', 0)) for i in range(1, num_people + 1)]
 
         quotation = generate_quotation_text(park_choice, num_people, num_days, accommodation_choice, transportation_choice, ages)
         
@@ -90,7 +93,7 @@ def register_client():
         # Redirect to the client details page after registration
         clients[client_id] = client_id
 
-        return redirect(url_for('client_details', client_id=len(clients) - 1))
+        return redirect(url_for('client_details', client_id=len(clients) - 0))
     # Handle GET request to display the registration form
     return render_template('registration_form.html')
 
@@ -137,21 +140,25 @@ def generate_quotation_text(park_choice, num_people, num_days, accommodation_cho
         "Private Safari Vehicle": 3000,
         "Shared Safari Vehicle": 1000,
     }
-    accommodation_cost = accommodation_costs.get(accommodation_choice, 0)
+    
+    # Calculate accommodation cost based on the number of nights (one less than days)
+    accommodation_cost = accommodation_costs.get(accommodation_choice, 0) * (num_days - 1)
     transportation_cost = transportation_costs.get(transportation_choice, 0)
 
-    total_cost = (accommodation_cost + transportation_cost) * num_people * num_days
+    total_cost = (accommodation_cost + transportation_cost) * num_people
 
-    quotation = f"Quotation for {num_people} people for {num_days} days at {park_choice} ({num_people} x {num_days} days):\n"
-    quotation += f"Accommodation: {accommodation_cost} Ksh per day\n"
-    quotation += f"Transportation: {transportation_cost} Ksh per day\n"
-    quotation += f"Total Cost: {total_cost} Ksh\n"
+    quotation = f"Quotation for {num_people} people for {num_days} days at {park_choice} ({num_people} people):\n"
+    quotation += f"Accommodation: {accommodation_cost} Ksh for {num_days - 1} nights\n"
+    quotation += f"Transportation: {transportation_cost} Ksh per person\n"
 
     for i, age in enumerate(ages, start=1):
         if age < 7:
-            quotation += f"Person {i} (Age {age}): Free accommodation\n"
+            child_accommodation_cost = (accommodation_costs.get(accommodation_choice, 0) * (num_days - 1)) / 2
+            quotation += f"Person {i} (Age {age}): {child_accommodation_cost} Ksh for {num_days - 1} nights (Child rate)\n"
         else:
-            quotation += f"Person {i} (Age {age}): Additional accommodation cost for adults\n"
+            quotation += f"Person {i} (Age {age}): {accommodation_cost} Ksh for {num_days - 1} nights (Adult rate)\n"
+
+    quotation += f"Total Cost: {total_cost} Ksh\n"
 
     return quotation
 
