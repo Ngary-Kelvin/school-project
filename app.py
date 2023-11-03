@@ -1,6 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
+
+# Load configuration settings from config.py
+app.config.from_pyfile('config.py')
+
+# Initialize the SQLAlchemy extension
+db = SQLAlchemy(app)
+
+# Now, you can access the configuration settings like this:
+print(app.config['DEBUG'])  # This will print the value of DEBUG from config.py
+print(app.config['SECRET_KEY'])  # This will print the value of SECRET_KEY
+
 
 # List to store quotations
 quotations = []
@@ -165,3 +178,5 @@ def generate_quotation_text(park_choice, num_people, num_days, accommodation_cho
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+ 
