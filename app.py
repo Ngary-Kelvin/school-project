@@ -1,14 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-
+from db import db
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db/mydatabase.db'
+
+db.init_app(app)
 
 # Load configuration settings from config.py
 app.config.from_pyfile('config.py')
-
-# Initialize the SQLAlchemy extension
-db = SQLAlchemy(app)
 
 # Now, you can access the configuration settings like this:
 print(app.config['DEBUG'])  # This will print the value of DEBUG from config.py

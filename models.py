@@ -1,4 +1,4 @@
-from flask import db
+from db import db
 
 class Client(db.Model):
     id = db.Column(db.Integer, primary_key=True)
