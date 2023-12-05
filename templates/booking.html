@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <!-- Add any additional styles or scripts you need -->
+</head>
+<body>
+    <h1>Booking</h1>
+    
+    <form action="{{ url_for('booking') }}" method="post">
+        <label for="park_choice">Park Choice:</label>
+        <input type="text" id="park_choice" name="park_choice" required>
+        
+        <label for="num_people">Number of People:</label>
+        <input type="number" id="num_people" name="num_people" min="1" required>
+        
+        <label for="num_days">Number of Days:</label>
+        <input type="number" id="num_days" name="num_days" min="1" required>
+        
+        <label for="accommodation_choice">Accommodation Choice:</label>
+        <input type="text" id="accommodation_choice" name="accommodation_choice" required>
+        
+        <label for="transportation_choice">Transportation Choice:</label>
+        <input type="text" id="transportation_choice" name="transportation_choice" required>
+        
+        <label for="ages">Ages (comma-separated):</label>
+        <input type="text" id="ages" name="ages" required>
+        
+        <!-- Add any additional fields as needed -->
+
+        <input type="submit" value="Book Now">
+    </form>
+
+    {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+</body>
+</html>

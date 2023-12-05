@@ -1,0 +1,23 @@
+<!-- quotation_result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Quotation Result</h1>
+        <div class="alert alert-success">
+            <strong>Quotation:</strong><br>
+            {{ quotation_text }}
+        </div>
+        <a href="{{ url_for('generate_quotation') }}" class="btn btn-primary">Generate Another Quotation</a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Return Home</a>
+        <a href="{{ url_for('booking') }}" class="btn btn-info">Book</a>
+    </div>
+</body>
+</html>

@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration Success</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Booking Success</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Quotation Generated Successfully</h1>
-    <p>{{ quotation }}</p>
-    <a href="/generate_quotation">Generate Another Quotation</a>
-    <a href="/">Return to Home</a>
-    <a href="/client_registration">Book Now</a>
-    </div>
-    
+    <h1>Booking Successful</h1>
+    <p>Booking Details:</p>
+    <ul>
+        <li>Park Choice: {{ booking_details.park_choice }}</li>
+        <li>Number of People: {{ booking_details.num_people }}</li>
+        <li>Number of Days: {{ booking_details.num_days }}</li>
+        <li>Accommodation Choice: {{ booking_details.accommodation_choice }}</li>
+        <li>Transportation Choice: {{ booking_details.transportation_choice }}</li>
+        <li>Ages: {{ booking_details.ages }}</li>
+        <li>Quotation: {{ booking_details.quotation_text }}</li>
+    </ul>
 </body>
 </html>
-

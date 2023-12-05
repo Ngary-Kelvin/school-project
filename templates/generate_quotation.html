@@ -32,7 +32,7 @@
 
             <label for="accommodation_choice">Choose Accommodation Type:</label>
             <select id="accommodation_choice" name="accommodation_choice">
-                <option value="Luxury Lodges">Luxury Lodges</option>
+                <option value="Luxury Lodges">Luxury Lodges -Kshs 15000</option>
                 <option value="Tented Camps">Tented Camps</option>
                 <option value="Budget Camps">Budget Camps</option>
             </select>
@@ -47,28 +47,38 @@
 
             <input type="submit" value="Generate Quotation">
         </form>
+        {% if quotation_text %}
+            <p>Generated Quotation:</p>
+            <p>{{ quotation_text }}</p>
+        {% endif %}
     </div>
+
+    
     <script>
-        // Function to dynamically add age input fields
-        document.getElementById('addAgeField').addEventListener('click', function () {
-            const numPeople = document.getElementById('num_people').value;
-            const ageFieldsContainer = document.getElementById('ageFields');
-            ageFieldsContainer.innerHTML = ''; // Clear previous fields
+       // Function to dynamically add age input fields
+document.getElementById('addAgeField').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-            for (let i = 1; i <= numPeople; i++) {
-                const ageLabel = document.createElement('label');
-                ageLabel.setAttribute('for', `age${i}`);
-                ageLabel.textContent = `Age for Person ${i}:`;
+    console.log('Button clicked!'); // Add this line to log the message
 
-                const ageInput = document.createElement('input');
-                ageInput.setAttribute('type', 'number');
-                ageInput.setAttribute('id', `age${i}`);
-                ageInput.setAttribute('name', `age${i}`);
+    const numPeople = document.getElementById('num_people').value;
+    const ageFieldsContainer = document.getElementById('ageFields');
+    ageFieldsContainer.innerHTML = ''; // Clear previous fields
 
-                ageFieldsContainer.appendChild(ageLabel);
-                ageFieldsContainer.appendChild(ageInput);
-            }
-        });
+    for (let i = 1; i <= numPeople; i++) {
+        const ageLabel = document.createElement('label');
+        ageLabel.setAttribute('for', `age${i}`);
+        ageLabel.textContent = `Age for Person ${i}:`;
+
+        const ageInput = document.createElement('input');
+        ageInput.setAttribute('type', 'number');
+        ageInput.setAttribute('id', `age${i}`);
+        ageInput.setAttribute('name', `age${i}`);
+
+        ageFieldsContainer.appendChild(ageLabel);
+        ageFieldsContainer.appendChild(ageInput);
+    }
+});
     </script>
 </body>
 </html>

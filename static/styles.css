@@ -1,87 +1,105 @@
-/* styles.css */
-
-/* Remove the up and down arrows from number input fields */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Reset some default styles to ensure consistency across browsers */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header styles */
 h1 {
-    color: #535252;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Form styles */
 form {
     margin-top: 20px;
 }
 
-/* Input field styles */
 label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-input[type="text"],
-select {
+input, select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-/* Submit button styles */
 input[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
-/* Quotation styles */
-#quotation {
-    margin-top: 20px;
+.error {
+    color: #FF0000;
 }
 
-/* Responsive styles for smaller screens */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
+/* style.css */
 
-    input[type="text"],
-    select {
-        margin-bottom: 10px;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
 
-    input[type="submit"] {
-        padding: 8px 16px;
-    }
+.container {
+    width: 50%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+    margin-bottom: 10px;
 }

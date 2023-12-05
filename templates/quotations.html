@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Quotations</h1>
+        
+        {% if quotations %}
+            <ul>
+                {% for quotation in quotations %}
+                    <li>{{ quotation.text }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No quotations available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
